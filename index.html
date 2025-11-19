@@ -1,165 +1,113 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Quarterly Earnings — RevealJS</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Quarterly Earnings Report - RevealJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Reveal core + theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
 
-    <!-- Highlight.js for syntax highlighting -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.css">
+  <!-- Syntax Highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/default.min.css">
 
-    <style>
-      .reveal { font-family: "Inter", sans-serif; }
-      .big-number { font-size: 3rem; font-weight: 700; }
-      section.has-dark-background { background: #0b1220; color: #fff; }
-    </style>
-  </head>
+  <!-- RevealJS Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+</head>
 
-  <body>
-    <div class="reveal">
-      <div class="slides">
+<body>
 
-        <!-- TITLE SLIDE — Email must appear here in plain text -->
-        <section>
-          <h1>Quarterly Earnings Report</h1>
-          <p class="big-number">Revenue ↑ 12% YoY</p>
-          <p>Prepared by: Technical Consultant</p>
+<div class="reveal">
+  <div class="slides">
 
-          <!-- REQUIRED: plain visible email for validator -->
-          <p><strong>Email: 22f1001438@ds.study.iitm.ac.in</strong></p>
+    <!-- Slide 1 -->
+    <section>
+      <h1>Quarterly Earnings Report</h1>
+      <h3>Interactive RevealJS Presentation</h3>
 
-          <aside class="notes">
-            Welcome everyone. This slide introduces the report and key growth figure.
-          </aside>
-        </section>
+      <!-- YOUR EMAIL INCLUDED HERE -->
+      <p><strong>Presented by:</strong> 22f1001438@ds.study.iitm.ac.in</p>
 
-        <!-- MARKDOWN SLIDE -->
-        <section data-markdown>
-          <textarea data-template>
+      <aside class="notes">
+        Introduce the quarterly results and mention that this presentation is built using RevealJS.
+      </aside>
+    </section>
 
-## Highlights (Markdown Slide)
+    <!-- Markdown Slide -->
+    <section data-markdown>
+      <textarea data-template>
+## Financial Overview (Markdown Slide)
 
-- **Revenue:** +12% YoY  
-- **Net Income:** Improved margin  
-- **Key Risks:**
-  1. FX exposure  
-  2. Regulatory pressure  
+- Revenue Growth: **12% YoY**
+- Operating Margin: **18%**
+- Cash Reserves: **$2.4B**
+- Analyst Confidence: *Stable*
+      </textarea>
 
----
+      <aside class="notes">
+        Mention that this slide is written entirely in Markdown.
+      </aside>
+    </section>
 
-## Action Items
+    <!-- Fragments Slide -->
+    <section>
+      <h2>Key Highlights</h2>
+      <ul>
+        <li class="fragment">Record-breaking revenue this quarter</li>
+        <li class="fragment">Expansion into two new markets</li>
+        <li class="fragment">Improved cash flow stability</li>
+        <li class="fragment">Strong institutional investor support</li>
+      </ul>
 
-- Finalize budget
-- Q&A preparation
+      <aside class="notes">
+        Reveal bullet points one at a time to maintain suspense.
+      </aside>
+    </section>
 
-          </textarea>
-        </section>
-
-        <!-- FRAGMENTS -->
-        <section>
-          <h2>Key Metrics</h2>
-          <ul>
-            <li class="fragment">Revenue: <strong>$420M</strong></li>
-            <li class="fragment">Gross Margin: <strong>48%</strong></li>
-            <li class="fragment fade-up">Operating Income: <strong>$85M</strong></li>
-            <li class="fragment fade-in">EPS: <strong>$1.12</strong></li>
-          </ul>
-
-          <aside class="notes">
-            Reveal metrics one by one to guide stakeholder attention.
-          </aside>
-        </section>
-
-        <!-- CODE SAMPLE -->
-        <section>
-          <h2>Data Pipeline Example</h2>
-
-          <pre><code class="python" data-line-numbers="1-3|5">
-# Load Q1 dataset
+    <!-- Code Slide -->
+    <section>
+      <h2>Data Processing Pipeline</h2>
+      <pre><code class="language-python">
 import pandas as pd
 
-df = pd.read_csv("data/quarterly.csv")
-growth = (df['revenue'].iloc[-1] / df['revenue'].iloc[-5] - 1) * 100
-print(f"5-Q revenue growth: {growth:.2f}%")
-          </code></pre>
+df = pd.read_csv("earnings.csv")
+quarterly_profit = df["revenue"] - df["expenses"]
+print(quarterly_profit)
+      </code></pre>
 
-          <aside class="notes">
-            Explain how revenue growth is computed from raw quarterly data.
-          </aside>
-        </section>
+      <aside class="notes">
+        Demonstrate how the analytics team processes financial CSV files.
+      </aside>
+    </section>
 
-        <!-- MATH FORMULAS -->
-        <section>
-          <h2>Financial Equations</h2>
+    <!-- Math Slide -->
+    <section>
+      <h2>Financial Equation</h2>
+      <p>
+        Investment Return Formula:
+      </p>
+      <p>
+        $$ ROI = \frac{(Final\ Value - Initial\ Value)}{Initial\ Value} \times 100 $$
+      </p>
 
-          <p>Net Profit Margin:</p>
-          <p>\[
-            \text{Net Profit Margin} = 
-            \frac{\text{Net Income}}{\text{Revenue}} \times 100\%
-          \]</p>
+      <aside class="notes">
+        Explain how ROI is computed for investment portfolios.
+      </aside>
+    </section>
 
-          <p>Return on Equity (ROE):</p>
-          <p>\[
-            ROE = 
-            \frac{\text{Net Income}}{\text{Shareholders' Equity}}
-          \]</p>
+  </div>
+</div>
 
-          <aside class="notes">
-            Explain why margin expansion is critical for long-term valuation.
-          </aside>
-        </section>
+<script>
+  Reveal.initialize({
+    hash: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+  });
+</script>
 
-        <!-- DARK BACKGROUND + FRAGMENTS -->
-        <section class="has-dark-background">
-          <h2>Sensitivity Scenarios</h2>
-          <p class="fragment">Base Case: Revenue +12%, Margin +1.5%</p>
-          <p class="fragment">Downside: Revenue +3%, Margin -0.5%</p>
-          <p class="fragment">Upside: Revenue +18%, Margin +3.0%</p>
-
-          <aside class="notes">
-            Discuss how changing assumptions influences guidance.
-          </aside>
-        </section>
-
-        <!-- CONTACT SLIDE — email shown again -->
-        <section>
-          <h2>Contact</h2>
-          <p>For follow-up discussions:</p>
-
-          <!-- Plain email again to guarantee detection -->
-          <p><strong>22f1001438@ds.study.iitm.ac.in</strong></p>
-
-          <aside class="notes">
-            Closing slide with direct contact details.
-          </aside>
-        </section>
-
-      </div>
-    </div>
-
-    <!-- Reveal JS -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.esm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.esm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.esm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.esm.js"></script>
-
-    <script>
-      Reveal.initialize({
-        width: 1280,
-        height: 720,
-        margin: 0.05,
-        controls: true,
-        progress: true,
-        history: true,
-        transition: 'slide',
-        plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealNotes ]
-      });
-    </script>
-  </body>
+</body>
 </html>
 
