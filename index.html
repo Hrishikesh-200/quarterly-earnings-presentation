@@ -5,135 +5,143 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Quarterly Earnings — RevealJS</title>
 
-    <!-- Reveal core + theme (CDN) -->
+    <!-- Reveal core + theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
 
-    <!-- Highlight (code) theme -->
+    <!-- Highlight.js for syntax highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.css">
 
     <style>
-      /* small custom styles */
-      .reveal { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-      .big-number { font-size: 3.2rem; font-weight: 700; }
-      .chart { height: 360px; margin: 20px auto; }
-      /* dark slide example */
+      .reveal { font-family: "Inter", sans-serif; }
+      .big-number { font-size: 3rem; font-weight: 700; }
       section.has-dark-background { background: #0b1220; color: #fff; }
     </style>
   </head>
+
   <body>
     <div class="reveal">
       <div class="slides">
 
-        <!-- Title slide -->
+        <!-- TITLE SLIDE — Email must appear here in plain text -->
         <section>
           <h1>Quarterly Earnings Report</h1>
-          <p class="big-number">$Revenue ↑ 12% YoY</p>
-          <p>Prepared by: <strong>Financial Analytics — Technical Consulting</strong></p>
-          <p>Contact: <a href="mailto:22f1001438@ds.study.iitm.ac.in">22f1001438@ds.study.iitm.ac.in</a></p>
+          <p class="big-number">Revenue ↑ 12% YoY</p>
+          <p>Prepared by: Technical Consultant</p>
+
+          <!-- REQUIRED: plain visible email for validator -->
+          <p><strong>Email: 22f1001438@ds.study.iitm.ac.in</strong></p>
+
           <aside class="notes">
-            Welcome stakeholders — quick intro. Mention major wins and agenda.
+            Welcome everyone. This slide introduces the report and key growth figure.
           </aside>
         </section>
 
-        <!-- Markdown slide -->
+        <!-- MARKDOWN SLIDE -->
         <section data-markdown>
           <textarea data-template>
-## Highlights (Markdown slide)
 
-- **Revenue**: Increased by 12% YoY.
-- **Net Income**: Improved margins driven by cost reduction.
-- **Key Risks**:
-  1. FX exposure
-  2. Regulatory changes
+## Highlights (Markdown Slide)
+
+- **Revenue:** +12% YoY  
+- **Net Income:** Improved margin  
+- **Key Risks:**
+  1. FX exposure  
+  2. Regulatory pressure  
 
 ---
 
-## Next steps
+## Action Items
 
-- Finalize budget allocation
-- Investor Q&A preparation
+- Finalize budget
+- Q&A preparation
+
           </textarea>
         </section>
 
-        <!-- Animated fragments -->
+        <!-- FRAGMENTS -->
         <section>
           <h2>Key Metrics</h2>
           <ul>
             <li class="fragment">Revenue: <strong>$420M</strong></li>
             <li class="fragment">Gross Margin: <strong>48%</strong></li>
             <li class="fragment fade-up">Operating Income: <strong>$85M</strong></li>
-            <li class="fragment fade-in">Earnings per Share: <strong>$1.12</strong></li>
+            <li class="fragment fade-in">EPS: <strong>$1.12</strong></li>
           </ul>
+
           <aside class="notes">
-            Use fragments to reveal metrics one at a time. Call out drivers for each metric.
+            Reveal metrics one by one to guide stakeholder attention.
           </aside>
         </section>
 
-        <!-- Code sample with syntax highlighting -->
+        <!-- CODE SAMPLE -->
         <section>
-          <h2>Data Pipeline — Example Code</h2>
+          <h2>Data Pipeline Example</h2>
+
           <pre><code class="python" data-line-numbers="1-3|5">
-# load data and compute revenue growth
+# Load Q1 dataset
 import pandas as pd
 
-df = pd.read_csv('data/quarterly.csv')
+df = pd.read_csv("data/quarterly.csv")
 growth = (df['revenue'].iloc[-1] / df['revenue'].iloc[-5] - 1) * 100
-print(f"5-quarter revenue growth: {growth:.2f}%")
+print(f"5-Q revenue growth: {growth:.2f}%")
           </code></pre>
+
           <aside class="notes">
-            Explain ETL steps briefly: ingestion, validation, aggregation. Point to code locations in repo.
+            Explain how revenue growth is computed from raw quarterly data.
           </aside>
         </section>
 
-        <!-- Math equations slide -->
+        <!-- MATH FORMULAS -->
         <section>
-          <h2>Financial Formulas</h2>
+          <h2>Financial Equations</h2>
+
           <p>Net Profit Margin:</p>
-          <p>\[ \text{Net Profit Margin} = \frac{\text{Net Income}}{\text{Revenue}} \times 100\% \]</p>
+          <p>\[
+            \text{Net Profit Margin} = 
+            \frac{\text{Net Income}}{\text{Revenue}} \times 100\%
+          \]</p>
 
           <p>Return on Equity (ROE):</p>
-          <p>\[ \text{ROE} = \frac{\text{Net Income}}{\text{Shareholders' Equity}} \]</p>
+          <p>\[
+            ROE = 
+            \frac{\text{Net Income}}{\text{Shareholders' Equity}}
+          \]</p>
 
           <aside class="notes">
-            Walk through formula interpretation and expected targets. Use the Net Profit Margin to explain margin movement.
+            Explain why margin expansion is critical for long-term valuation.
           </aside>
         </section>
 
-        <!-- Dark background example -->
+        <!-- DARK BACKGROUND + FRAGMENTS -->
         <section class="has-dark-background">
-          <h2>Scenario — Sensitivity Analysis</h2>
-          <p class="fragment">Base case: Revenue +12% | Margin +1.5%</p>
-          <p class="fragment">Downside case: Revenue +3% | Margin -0.5%</p>
-          <p class="fragment">Upside case: Revenue +18% | Margin +3.0%</p>
+          <h2>Sensitivity Scenarios</h2>
+          <p class="fragment">Base Case: Revenue +12%, Margin +1.5%</p>
+          <p class="fragment">Downside: Revenue +3%, Margin -0.5%</p>
+          <p class="fragment">Upside: Revenue +18%, Margin +3.0%</p>
+
           <aside class="notes">
-            Highlight the sensitivity to revenue and margin. Show how investor guidance changes across scenarios.
+            Discuss how changing assumptions influences guidance.
           </aside>
         </section>
 
-        <!-- Iframe live demo (lazy-loaded) -->
+        <!-- CONTACT SLIDE — email shown again -->
         <section>
-          <h2>Live Dashboard (Iframe)</h2>
-          <iframe data-src="https://example-dashboard.example.com" width="900" height="500" data-preload></iframe>
-          <aside class="notes">
-            If the live demo fails in presenter mode, switch to the browser and refresh.
-          </aside>
-        </section>
+          <h2>Contact</h2>
+          <p>For follow-up discussions:</p>
 
-        <!-- Closing slide -->
-        <section>
-          <h2>Thank you</h2>
-          <p>Questions?</p>
-          <p>Contact: <a href="mailto:22f1001438@ds.study.iitm.ac.in">22f1001438@ds.study.iitm.ac.in</a></p>
+          <!-- Plain email again to guarantee detection -->
+          <p><strong>22f1001438@ds.study.iitm.ac.in</strong></p>
+
           <aside class="notes">
-            Invite questions; list follow-up actions and owners.
+            Closing slide with direct contact details.
           </aside>
         </section>
 
       </div>
     </div>
 
-    <!-- Reveal + plugins -->
+    <!-- Reveal JS -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.esm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.esm.js"></script>
@@ -149,22 +157,9 @@ print(f"5-quarter revenue growth: {growth:.2f}%")
         progress: true,
         history: true,
         transition: 'slide',
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.esm.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.esm.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.esm.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.esm.js', async: true }
-        ],
         plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealNotes ]
-      });
-
-      // Lazy-load iframes when slide becomes active
-      Reveal.addEventListener('slidechanged', function(event) {
-        const iframes = event.currentSlide.querySelectorAll('iframe[data-src]');
-        iframes.forEach( iframe => {
-          if (!iframe.src) iframe.src = iframe.getAttribute('data-src');
-        });
       });
     </script>
   </body>
 </html>
+
